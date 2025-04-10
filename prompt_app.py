@@ -251,7 +251,7 @@ def prompt_library():
                 
                 with st.form("edit_prompt_form"):
                     edit_name = st.text_input("Prompt Name", value=st.session_state.edit_prompt['name'])
-                    edit_description = st.text_area("Description", value=st.session_state.edit_prompt['description'], height=60)
+                    edit_description = st.text_area("Description", value=st.session_state.edit_prompt['description'], height=68)
                     edit_prompt = st.text_area("Prompt Template", value=st.session_state.edit_prompt['prompt'], height=150)
                     
                     # Tags
@@ -349,7 +349,7 @@ def prompt_library():
                 # Form for adding new prompts
                 with st.form("add_prompt_form"):
                     new_name = st.text_input("Prompt Name")
-                    new_description = st.text_area("Description", height=60)
+                    new_description = st.text_area("Description", height=68)
                     new_prompt = st.text_area("Prompt Template", height=150, help="Use {placeholders} for dynamic content")
                     
                     # Tags input
