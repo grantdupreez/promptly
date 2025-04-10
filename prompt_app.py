@@ -98,7 +98,7 @@ def prompt_library():
             # Form for adding new prompts
             with st.form("add_prompt_form"):
                 new_name = st.text_input("Prompt Name")
-                new_description = st.text_area("Description", height=60)
+                new_description = st.text_area("Description", height=68)
                 new_prompt = st.text_area("Prompt Template", height=150, help="Use {placeholders} for dynamic content")
                 
                 # Category selection or creation
