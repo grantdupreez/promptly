@@ -233,14 +233,14 @@ def prompt_library():
                                         if p['id'] == prompt['id']:
                                             p['favorite'] = not p.get('favorite', False)
                                             save_prompts(st.session_state.prompts)
-                                            st.experimental_rerun()
+                                            st.rerun()
                                             break
                             
                             with col3:
                                 if st.button("Edit", key=f"edit_{prompt['id']}"):
                                     st.session_state.edit_prompt = prompt
                                     st.session_state.edit_prompt_category = prompt['category']
-                                    st.experimental_rerun()  # This triggers a rerun
+                                    st.rerun()  # This triggers a rerun
                 else:
                     st.info("No prompts match your search and filters")
         
@@ -337,12 +337,12 @@ def prompt_library():
                             del st.session_state.edit_prompt
                             del st.session_state.edit_prompt_category
                             st.success("Prompt updated successfully")
-                            st.experimental_rerun()
+                            st.rerun()
                     
                     if cancel_button:
                         del st.session_state.edit_prompt
                         del st.session_state.edit_prompt_category
-                        st.experimental_rerun()
+                        st.rerun()
             else:
                 st.subheader("Add New Prompt")
                 
@@ -442,7 +442,7 @@ def prompt_library():
                         save_prompts(st.session_state.prompts)
                         st.success(f"Deleted {prompt_names[selected_prompt_index]}")
                         time.sleep(1)  # Brief pause to show the success message
-                        st.experimental_rerun()
+                        st.rerun()
                 else:
                     st.info("No prompts available to delete")
         
@@ -547,7 +547,7 @@ def main():
             
             # Update the text area with the filled prompt
             st.session_state.current_prompt = filled_prompt
-            st.experimental_rerun()
+            st.rerun()
     
     # Send button
     if st.button("Send"):
